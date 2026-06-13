@@ -1,3 +1,6 @@
+import { redirect } from 'next/navigation'
+import { defaultLocale } from '@/lib/i18n'
+
 export default function RootPage() {
-  return <div className="p-8">Loading...</div>
+  redirect(`/${defaultLocale}`)
 }
