@@ -1,4 +1,4 @@
-# AtomyGlow - 글로벌 애터미 가입 가이드 사이트 설계
+# GlowBeautyAtomy - 글로벌 애터미 가입 가이드 사이트 설계
 
 ## 배경 / 목적
 
@@ -8,8 +8,9 @@
 
 ## 브랜드
 
-- **이름**: AtomyGlow
-- "Atomy"(검색 키워드 매칭) + "Glow"(K-뷰티 컨셉)를 결합
+- **이름**: GlowBeautyAtomy
+- "Atomy"(검색 키워드 매칭) + "Glow Beauty"(K-뷰티 컨셉)를 결합
+- GitHub 저장소/계정: `glowbeautyatomy`
 
 ## 비주얼 방향
 
