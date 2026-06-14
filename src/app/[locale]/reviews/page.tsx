@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getContentDoc, listContentSlugs } from '@/lib/content'
+import { getDictionary } from '@/lib/dictionaries'
 import { locales, type Locale } from '@/lib/i18n'
 
 export function generateStaticParams() {
@@ -7,6 +8,7 @@ export function generateStaticParams() {
 }
 
 export default async function ReviewsPage({ params }: { params: { locale: Locale } }) {
+  const dict = getDictionary(params.locale)
   const slugs = listContentSlugs('reviews', params.locale)
   const docs = await Promise.all(
     slugs.map((slug) => getContentDoc('reviews', params.locale, slug))
@@ -14,7 +16,7 @@ export default async function ReviewsPage({ params }: { params: { locale: Locale
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-extrabold">Reviews</h1>
+      <h1 className="text-2xl font-extrabold">{dict.nav.reviews}</h1>
       {docs.map((doc) => (
         <Link
           key={doc.slug}

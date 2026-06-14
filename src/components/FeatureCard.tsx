@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 
 interface FeatureCardProps {
@@ -11,6 +11,8 @@ interface FeatureCardProps {
 }
 
 export function FeatureCard({ href, emoji, title, description }: FeatureCardProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
       whileHover={{ y: -6, boxShadow: '0 12px 28px rgba(0,0,0,0.15)' }}
@@ -18,7 +20,7 @@ export function FeatureCard({ href, emoji, title, description }: FeatureCardProp
     >
       <Link href={href}>
         <motion.span
-          animate={{ y: [0, -6, 0] }}
+          animate={shouldReduceMotion ? {} : { y: [0, -6, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
           className="mb-2 inline-block text-3xl"
         >
