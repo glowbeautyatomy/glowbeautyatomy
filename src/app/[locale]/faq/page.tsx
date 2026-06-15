@@ -1,5 +1,6 @@
 import { faqData } from '@/lib/faq-data'
 import { getDictionary } from '@/lib/dictionaries'
+import { Comments } from '@/components/Comments'
 import { locales, type Locale } from '@/lib/i18n'
 
 export function generateStaticParams() {
@@ -19,6 +20,7 @@ export default function FaqPage({ params }: { params: { locale: Locale } }) {
           <p className="text-sm text-gray-700">{item.answer}</p>
         </div>
       ))}
+      <Comments locale={params.locale} />
     </div>
   )
 }

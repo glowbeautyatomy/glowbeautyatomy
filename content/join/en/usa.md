@@ -1,18 +1,18 @@
 ---
-title: "How to Join Atomy from Australia"
-description: "Step-by-step Atomy sign-up guide for residents of Australia"
-country: "au"
-flag: "🇦🇺"
-name: "Australia"
-ctaLabel: "Join via Atomy Australia's Official Site"
+title: "How to Join Atomy from the USA"
+description: "Step-by-step Atomy sign-up guide for residents of the United States"
+country: "us"
+flag: "🇺🇸"
+name: "USA"
+ctaLabel: "Join via Atomy USA's Official Site"
 ---
 
 ## Sign-Up Steps
 
-1. Visit Atomy's official Australia site.
+1. Visit Atomy's official USA site.
 2. Select "Become a Member" / sign-up.
 3. Enter the sponsor ID (auto-filled when you use the button below).
-4. Fill in your personal details and bank information to complete registration.
+4. Fill in your personal details and payment information to complete registration.
 
 ## Benefits of Joining
 

@@ -1,4 +1,16 @@
-export type CountryCode = 'kr' | 'au' | 'ph'
+export type CountryCode =
+  | 'kr'
+  | 'au'
+  | 'ph'
+  | 'us'
+  | 'ca'
+  | 'gb'
+  | 'nz'
+  | 'sg'
+  | 'my'
+  | 'in'
+  | 'za'
+  | 'ie'
 
 interface ReferralEntry {
   mallUrl: string
@@ -24,6 +36,51 @@ export const referralConfig: Record<CountryCode, ReferralEntry> = {
     mallUrl: 'https://www.atomy.com/ph',
     sponsorParam: 'sponsor',
     sponsorId: 'REPLACE_ME_PH',
+  },
+  us: {
+    mallUrl: 'https://www.atomy.com/us',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_US',
+  },
+  ca: {
+    mallUrl: 'https://www.atomy.com/ca',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_CA',
+  },
+  gb: {
+    mallUrl: 'https://www.atomy.com/gb',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_GB',
+  },
+  nz: {
+    mallUrl: 'https://www.atomy.com/nz',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_NZ',
+  },
+  sg: {
+    mallUrl: 'https://www.atomy.com/sg',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_SG',
+  },
+  my: {
+    mallUrl: 'https://www.atomy.com/my',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_MY',
+  },
+  in: {
+    mallUrl: 'https://www.atomy.com/in',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_IN',
+  },
+  za: {
+    mallUrl: 'https://www.atomy.com/za',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_ZA',
+  },
+  ie: {
+    mallUrl: 'https://www.atomy.com/ie',
+    sponsorParam: 'sponsor',
+    sponsorId: 'REPLACE_ME_IE',
   },
 }
 

@@ -15,7 +15,7 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
           <Link
             key={locale}
             href={targetPath}
-            className={locale === currentLocale ? 'underline' : 'text-gray-400'}
+            className={locale === currentLocale ? 'text-atomy-dark underline' : 'text-gray-400'}
           >
             {locale.toUpperCase()}
           </Link>

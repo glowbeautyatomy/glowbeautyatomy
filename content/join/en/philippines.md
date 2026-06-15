@@ -2,6 +2,8 @@
 title: "How to Join Atomy from the Philippines"
 description: "Step-by-step Atomy sign-up guide for residents of the Philippines"
 country: "ph"
+flag: "🇵🇭"
+name: "Philippines"
 ctaLabel: "Join via Atomy Philippines' Official Site"
 ---
 

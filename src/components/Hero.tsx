@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
+import Link from 'next/link'
 import { CtaButton } from './CtaButton'
 import type { CountryCode } from '@/config/referral'
 
@@ -9,10 +10,11 @@ interface HeroProps {
   subtitle: string
   badge: string
   ctaLabel: string
-  ctaCountry: CountryCode
+  ctaCountry?: CountryCode
+  ctaHref?: string
 }
 
-export function Hero({ title, subtitle, badge, ctaLabel, ctaCountry }: HeroProps) {
+export function Hero({ title, subtitle, badge, ctaLabel, ctaCountry, ctaHref }: HeroProps) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
@@ -33,7 +35,16 @@ export function Hero({ title, subtitle, badge, ctaLabel, ctaCountry }: HeroProps
       </motion.span>
       <h1 className="mb-2 text-4xl font-extrabold tracking-tight">{title}</h1>
       <p className="mb-6 text-lg font-medium">{subtitle}</p>
-      <CtaButton country={ctaCountry} label={ctaLabel} />
+      {ctaHref ? (
+        <Link
+          href={ctaHref}
+          className="inline-block rounded-full bg-atomy-dark px-8 py-3 font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-atomy"
+        >
+          {ctaLabel}
+        </Link>
+      ) : (
+        <CtaButton country={ctaCountry as CountryCode} label={ctaLabel} />
+      )}
     </motion.div>
   )
 }

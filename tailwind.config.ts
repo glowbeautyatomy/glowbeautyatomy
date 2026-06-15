@@ -5,6 +5,12 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      colors: {
+        atomy: {
+          DEFAULT: '#00AEEF',
+          dark: '#0072BC',
+        },
+      },
       keyframes: {
         shine: {
           '0%': { backgroundPosition: '0% 50%' },

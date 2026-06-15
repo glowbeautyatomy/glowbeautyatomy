@@ -9,7 +9,8 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-const heroCountry: Record<Locale, CountryCode> = { ko: 'kr', en: 'au' }
+const heroCountry: Record<Locale, CountryCode | undefined> = { ko: 'kr', en: undefined }
+const heroCtaHref: Record<Locale, string | undefined> = { ko: undefined, en: '/en/join' }
 
 export default function HomePage({ params }: { params: { locale: Locale } }) {
   const dict = getDictionary(params.locale)
@@ -22,6 +23,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         badge={dict.home.badge}
         ctaLabel={dict.home.cta}
         ctaCountry={heroCountry[params.locale]}
+        ctaHref={heroCtaHref[params.locale]}
       />
       <TrendBanner items={[...dict.home.trends]} />
       <div className="grid gap-4 sm:grid-cols-3">

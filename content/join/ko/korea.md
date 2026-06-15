@@ -2,6 +2,8 @@
 title: "한국에서 애터미 가입하는 방법"
 description: "한국 거주자를 위한 애터미 회원가입 절차 안내"
 country: "kr"
+flag: "🇰🇷"
+name: "한국"
 ctaLabel: "한국 애터미 공식몰에서 가입하기"
 ---
 

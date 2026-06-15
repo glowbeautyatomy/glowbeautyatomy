@@ -16,7 +16,7 @@ export const dictionaries = {
       ],
       cards: [
         {
-          href: '/ko/join/korea',
+          href: '/ko/join',
           emoji: '🌍',
           title: '국가별 가입 가이드',
           description: '내 나라에서 애터미 가입하는 법',
@@ -42,7 +42,7 @@ export const dictionaries = {
       badge: '🔥 K-Beauty Insider in 27+ Countries',
       title: 'GlowBeautyAtomy',
       subtitle: 'Best K-beauty deals + sign-up perks, start from your country',
-      cta: 'Join from Australia',
+      cta: 'Start Your Global Journey',
       trends: [
         '🇦🇺 Trending in Australia',
         '🇦🇱 Hot in Albania',
@@ -51,7 +51,7 @@ export const dictionaries = {
       ],
       cards: [
         {
-          href: '/en/join/australia',
+          href: '/en/join',
           emoji: '🌍',
           title: 'Country Join Guides',
           description: 'How to join Atomy from your country',

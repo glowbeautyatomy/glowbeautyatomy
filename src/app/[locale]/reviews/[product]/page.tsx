@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getContentDoc, listContentSlugs } from '@/lib/content'
 import { CtaButton } from '@/components/CtaButton'
+import { Comments } from '@/components/Comments'
 import { locales, type Locale } from '@/lib/i18n'
 import type { CountryCode } from '@/config/referral'
 
@@ -32,6 +33,7 @@ export default async function ReviewProductPage({
         dangerouslySetInnerHTML={{ __html: doc.contentHtml }}
       />
       <CtaButton country={countryCode} label={doc.ctaLabel as string} />
+      <Comments locale={params.locale} />
     </article>
   )
 }

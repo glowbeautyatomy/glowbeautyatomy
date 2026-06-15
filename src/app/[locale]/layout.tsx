@@ -32,18 +32,24 @@ export default function LocaleLayout({
   }
   const locale = params.locale as Locale
   const dict = getDictionary(locale)
-  const joinHref = locale === 'ko' ? `/${locale}/join/korea` : `/${locale}/join/australia`
+  const joinHref = `/${locale}/join`
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-6">
       <header className="mb-6 flex items-center justify-between">
-        <a href={`/${locale}`} className="text-xl font-extrabold">
+        <a href={`/${locale}`} className="text-xl font-extrabold text-atomy-dark">
           GlowBeautyAtomy
         </a>
-        <nav className="flex items-center gap-4 text-sm font-semibold">
-          <a href={joinHref}>{dict.nav.join}</a>
-          <a href={`/${locale}/reviews`}>{dict.nav.reviews}</a>
-          <a href={`/${locale}/faq`}>{dict.nav.faq}</a>
+        <nav className="flex items-center gap-4 text-sm font-semibold text-gray-700">
+          <a href={joinHref} className="hover:text-atomy-dark">
+            {dict.nav.join}
+          </a>
+          <a href={`/${locale}/reviews`} className="hover:text-atomy-dark">
+            {dict.nav.reviews}
+          </a>
+          <a href={`/${locale}/faq`} className="hover:text-atomy-dark">
+            {dict.nav.faq}
+          </a>
           <LanguageSwitcher currentLocale={locale} />
         </nav>
       </header>
