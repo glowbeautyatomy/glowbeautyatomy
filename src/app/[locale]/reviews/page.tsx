@@ -21,10 +21,13 @@ export default async function ReviewsPage({ params }: { params: { locale: Locale
         <Link
           key={doc.slug}
           href={`/${params.locale}/reviews/${doc.slug}`}
-          className="block rounded-xl bg-white p-5 shadow transition-transform hover:scale-[1.01]"
+          className="flex items-start gap-4 rounded-xl bg-white p-5 shadow transition-transform hover:scale-[1.01]"
         >
-          <h2 className="font-bold">{doc.title}</h2>
-          <p className="text-sm text-gray-600">{doc.description}</p>
+          <span className="text-3xl">{doc.emoji as string}</span>
+          <div>
+            <h2 className="font-bold">{doc.title}</h2>
+            <p className="text-sm text-gray-600">{doc.description}</p>
+          </div>
         </Link>
       ))}
     </div>

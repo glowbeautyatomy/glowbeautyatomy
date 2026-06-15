@@ -22,6 +22,21 @@ export const faqData: Record<Locale, FaqItem[]> = {
       answer:
         '네, 애터미는 27개 법인 국가를 포함해 115개 이상의 지역에서 회원가입이 가능합니다. 거주 국가에 따라 가입 절차가 다르니, 국가별 가입 가이드를 참고하세요.',
     },
+    {
+      question: '제품이 정품인가요? 가짜 제품 걱정은 안 해도 되나요?',
+      answer:
+        '애터미 공식몰 또는 추천인을 통한 정식 가입 후 구매하면 100% 정품입니다. 출처가 불분명한 오픈마켓 재판매 제품은 가격은 저렴해 보여도 정품 인증이나 교환/환불이 어려우니, 공식 채널 이용을 권장합니다.',
+    },
+    {
+      question: '배송은 얼마나 걸리나요?',
+      answer:
+        '국가와 제품에 따라 다르지만, 보통 국내(한국) 주문은 1~3일, 해외 배송은 국가별 통관 절차에 따라 1~2주 정도 소요됩니다. 정확한 배송 일정은 가입한 국가의 애터미 공식몰에서 확인할 수 있습니다.',
+    },
+    {
+      question: '가입 후 꼭 판매활동을 해야 하나요?',
+      answer:
+        '아니요. 많은 회원들이 본인이 쓸 제품을 더 저렴한 회원가로 구매하기 위한 목적으로만 가입합니다. 추천이나 판매는 선택 사항이며, 강제되지 않습니다.',
+    },
   ],
   en: [
     {
@@ -38,6 +53,21 @@ export const faqData: Record<Locale, FaqItem[]> = {
       question: 'Can I join from any country?',
       answer:
         'Yes, Atomy is available for registration in 115+ regions, including 27 countries with local entities. The exact sign-up process depends on your country of residence — check our country guides for details.',
+    },
+    {
+      question: 'Are the products genuine? How do I avoid fakes?',
+      answer:
+        'Products purchased through the official Atomy mall (after signing up via a member link) are 100% authentic. Reseller listings on open marketplaces may look cheaper but often lack authenticity guarantees and easy returns, so official channels are recommended.',
+    },
+    {
+      question: 'How long does shipping take?',
+      answer:
+        'It depends on your country and the product, but domestic Korea orders typically arrive in 1-3 days, while international shipping can take 1-2 weeks depending on customs in your country. Check your local Atomy mall for exact delivery estimates.',
+    },
+    {
+      question: 'Do I have to sell products after joining?',
+      answer:
+        'No. Many members join purely to buy products they already use at a discounted member price. Referrals and sales are optional, never required.',
     },
   ],
 }

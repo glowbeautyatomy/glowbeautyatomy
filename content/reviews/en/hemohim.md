@@ -2,6 +2,7 @@
 title: "Atomy HemoHIM Review: What It Is and Who It's For"
 description: "An honest look at Atomy's bestselling HemoHIM immune supplement"
 country: "au"
+emoji: "🌿"
 ctaLabel: "Check HemoHIM on Atomy Australia"
 ---
 

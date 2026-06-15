@@ -8,6 +8,10 @@ export const dictionaries = {
       title: 'GlowBeautyAtomy',
       subtitle: 'K-뷰티 최저가 + 가입 혜택, 당신의 나라에서 시작하세요',
       cta: '한국에서 가입하기',
+      reviewsTitle: '최신 리뷰',
+      reviewsMore: '리뷰 전체 보기',
+      countriesTitle: '국가별 가입 안내',
+      countriesMore: '국가 전체 보기',
       trends: [
         '🇦🇺 호주에서 인기',
         '🇦🇱 알바니아에서 화제',
@@ -43,6 +47,10 @@ export const dictionaries = {
       title: 'GlowBeautyAtomy',
       subtitle: 'Best K-beauty deals + sign-up perks, start from your country',
       cta: 'Start Your Global Journey',
+      reviewsTitle: 'Latest Reviews',
+      reviewsMore: 'See all reviews',
+      countriesTitle: 'Join From Your Country',
+      countriesMore: 'See all countries',
       trends: [
         '🇦🇺 Trending in Australia',
         '🇦🇱 Hot in Albania',

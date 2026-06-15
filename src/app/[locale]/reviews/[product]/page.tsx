@@ -26,6 +26,9 @@ export default async function ReviewProductPage({
 
   return (
     <article className="space-y-6">
+      <div className="flex h-32 items-center justify-center rounded-xl bg-gradient-to-r from-pink-200 via-yellow-100 to-sky-200 text-6xl">
+        {doc.emoji as string}
+      </div>
       <h1 className="text-2xl font-extrabold">{doc.title}</h1>
       <p className="text-gray-600">{doc.description}</p>
       <div
