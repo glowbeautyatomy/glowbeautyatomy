@@ -12,14 +12,21 @@ export default function FaqPage({ params }: { params: { locale: Locale } }) {
   const items = faqData[params.locale]
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-extrabold">{dict.nav.faq}</h1>
-      {items.map((item) => (
-        <div key={item.question} className="rounded-xl bg-white p-5 shadow">
-          <h2 className="mb-2 font-bold">{item.question}</h2>
-          <p className="text-sm text-gray-700">{item.answer}</p>
-        </div>
-      ))}
+    <div className="space-y-10">
+      <header className="border-b border-luxe-line pb-6">
+        <span className="eyebrow mb-3 block">Trust &amp; Answers</span>
+        <h1 className="font-serif text-4xl font-semibold tracking-tight text-luxe-ink">
+          {dict.nav.faq}
+        </h1>
+      </header>
+      <div className="space-y-4">
+        {items.map((item) => (
+          <div key={item.question} className="luxe-card p-7">
+            <h2 className="mb-2 font-serif text-lg font-semibold text-luxe-ink">{item.question}</h2>
+            <p className="text-sm leading-relaxed text-luxe-muted">{item.answer}</p>
+          </div>
+        ))}
+      </div>
       <Comments locale={params.locale} />
     </div>
   )

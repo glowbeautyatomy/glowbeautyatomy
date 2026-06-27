@@ -3,6 +3,7 @@ import type { Locale } from './i18n'
 export const dictionaries = {
   ko: {
     nav: { join: '가입 가이드', reviews: '리뷰', faq: 'FAQ' },
+    promo: '전세계 27개국 K-뷰티 인사이더 · 지금 내 나라에서 시작하세요',
     home: {
       badge: '🔥 전세계 27개국 K-뷰티 인사이더',
       title: 'GlowBeautyAtomy',
@@ -42,6 +43,7 @@ export const dictionaries = {
   },
   en: {
     nav: { join: 'Join Guide', reviews: 'Reviews', faq: 'FAQ' },
+    promo: 'K-Beauty Insider across 27+ countries · Start from your country today',
     home: {
       badge: '🔥 K-Beauty Insider in 27+ Countries',
       title: 'GlowBeautyAtomy',

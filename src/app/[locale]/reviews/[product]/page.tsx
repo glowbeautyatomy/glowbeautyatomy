@@ -25,14 +25,16 @@ export default async function ReviewProductPage({
   const countryCode = doc.country as CountryCode
 
   return (
-    <article className="space-y-6">
-      <div className="flex h-32 items-center justify-center rounded-xl bg-gradient-to-r from-pink-200 via-yellow-100 to-sky-200 text-6xl">
-        {doc.emoji as string}
+    <article className="mx-auto max-w-3xl space-y-7">
+      <div className="relative flex h-52 items-center justify-center overflow-hidden bg-gradient-to-br from-luxe-blush via-luxe-sand to-[#CDE5F4] text-7xl shadow-soft">
+        <div className="absolute left-1/2 top-4 h-40 w-40 -translate-x-1/2 rounded-full bg-white/50 blur-3xl" />
+        <span className="relative">{doc.emoji as string}</span>
+        <span className="pointer-events-none absolute inset-3 border border-white/40" />
       </div>
-      <h1 className="text-2xl font-extrabold">{doc.title}</h1>
-      <p className="text-gray-600">{doc.description}</p>
+      <h1 className="font-serif text-4xl font-semibold tracking-tight text-luxe-ink">{doc.title}</h1>
+      <p className="text-lg text-luxe-muted">{doc.description}</p>
       <div
-        className="prose prose-sm max-w-none rounded-xl bg-white p-5 shadow"
+        className="prose prose-neutral max-w-none border-y border-luxe-line py-7 prose-headings:font-serif prose-headings:text-luxe-ink prose-a:text-luxe-accent"
         dangerouslySetInnerHTML={{ __html: doc.contentHtml }}
       />
       <CtaButton country={countryCode} label={doc.ctaLabel as string} />

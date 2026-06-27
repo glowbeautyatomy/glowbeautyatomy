@@ -24,11 +24,11 @@ export default async function JoinCountryPage({
   const countryCode = doc.country as CountryCode
 
   return (
-    <article className="space-y-6">
-      <h1 className="text-2xl font-extrabold">{doc.title}</h1>
-      <p className="text-gray-600">{doc.description}</p>
+    <article className="mx-auto max-w-3xl space-y-7">
+      <h1 className="font-serif text-4xl font-semibold tracking-tight text-luxe-ink">{doc.title}</h1>
+      <p className="text-lg text-luxe-muted">{doc.description}</p>
       <div
-        className="prose prose-sm max-w-none rounded-xl bg-white p-5 shadow"
+        className="prose prose-neutral max-w-none border-y border-luxe-line py-7 prose-headings:font-serif prose-headings:text-luxe-ink prose-a:text-luxe-accent"
         dangerouslySetInnerHTML={{ __html: doc.contentHtml }}
       />
       <CtaButton country={countryCode} label={doc.ctaLabel as string} />

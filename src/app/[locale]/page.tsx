@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { Hero } from '@/components/Hero'
 import { TrendBanner } from '@/components/TrendBanner'
 import { FeatureCard } from '@/components/FeatureCard'
+import { Reveal, RevealItem } from '@/components/Reveal'
+import { SectionHeading } from '@/components/SectionHeading'
 import { getContentDoc, listContentSlugs } from '@/lib/content'
 import { getDictionary } from '@/lib/dictionaries'
 import { locales, type Locale } from '@/lib/i18n'
@@ -28,65 +30,98 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
   )
 
   return (
-    <div className="space-y-8">
-      <Hero
-        title={dict.home.title}
-        subtitle={dict.home.subtitle}
-        badge={dict.home.badge}
-        ctaLabel={dict.home.cta}
-        ctaCountry={heroCountry[params.locale]}
-        ctaHref={heroCtaHref[params.locale]}
-      />
-      <TrendBanner items={[...dict.home.trends]} />
-      <div className="grid gap-4 sm:grid-cols-3">
-        {dict.home.cards.map((card) => (
-          <FeatureCard key={card.href} {...card} />
-        ))}
+    <div className="space-y-20 sm:space-y-28">
+      <div className="space-y-10">
+        <Hero
+          title={dict.home.title}
+          subtitle={dict.home.subtitle}
+          badge={dict.home.badge}
+          ctaLabel={dict.home.cta}
+          ctaCountry={heroCountry[params.locale]}
+          ctaHref={heroCtaHref[params.locale]}
+        />
+        <Reveal direction="none" delay={0.1}>
+          <TrendBanner items={[...dict.home.trends]} />
+        </Reveal>
       </div>
 
-      <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-extrabold">{dict.home.reviewsTitle}</h2>
-          <Link href={`/${params.locale}/reviews`} className="text-sm font-semibold text-atomy-dark">
-            {dict.home.reviewsMore}
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {reviewDocs.map((doc) => (
-            <Link
-              key={doc.slug}
-              href={`/${params.locale}/reviews/${doc.slug}`}
-              className="flex items-start gap-3 rounded-xl bg-white p-5 shadow transition-transform hover:scale-[1.01]"
-            >
-              <span className="text-2xl">{doc.emoji as string}</span>
-              <div>
-                <h3 className="font-bold">{doc.title}</h3>
-                <p className="text-sm text-gray-600">{doc.description}</p>
-              </div>
-            </Link>
+      <section>
+        <Reveal stagger className="grid gap-5 sm:grid-cols-3">
+          {dict.home.cards.map((card) => (
+            <RevealItem key={card.href} className="h-full">
+              <FeatureCard {...card} />
+            </RevealItem>
           ))}
-        </div>
+        </Reveal>
       </section>
 
-      <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-extrabold">{dict.home.countriesTitle}</h2>
-          <Link href={`/${params.locale}/join`} className="text-sm font-semibold text-atomy-dark">
-            {dict.home.countriesMore}
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {countryDocs.map((doc) => (
+      <section className="space-y-8">
+        <SectionHeading
+          eyebrow="K-Beauty Picks"
+          title={dict.home.reviewsTitle}
+          action={
             <Link
-              key={doc.slug}
-              href={`/${params.locale}/join/${doc.slug}`}
-              className="flex items-center gap-3 rounded-xl bg-white p-5 shadow transition-transform hover:scale-[1.02]"
+              href={`/${params.locale}/reviews`}
+              className="eyebrow link-underline text-luxe-ink/70 transition-colors hover:text-luxe-accent"
             >
-              <span className="text-3xl">{doc.flag as string}</span>
-              <span className="font-bold">Atomy {doc.name as string}</span>
+              {dict.home.reviewsMore}
             </Link>
+          }
+        />
+        <Reveal stagger className="grid gap-6 sm:grid-cols-3">
+          {reviewDocs.map((doc) => (
+            <RevealItem key={doc.slug} className="h-full">
+              <Link
+                href={`/${params.locale}/reviews/${doc.slug}`}
+                className="luxe-card group relative flex h-full items-start gap-4 overflow-hidden p-7"
+              >
+                <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-luxe-accent transition-transform duration-500 group-hover:scale-x-100" />
+                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-luxe-cream text-2xl ring-1 ring-luxe-line transition-transform duration-500 group-hover:scale-110">
+                  {doc.emoji as string}
+                </span>
+                <div>
+                  <h3 className="font-serif text-lg font-semibold text-luxe-ink">{doc.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-luxe-muted">{doc.description}</p>
+                </div>
+              </Link>
+            </RevealItem>
           ))}
-        </div>
+        </Reveal>
+      </section>
+
+      <section className="space-y-8">
+        <SectionHeading
+          eyebrow="Global Join"
+          title={dict.home.countriesTitle}
+          action={
+            <Link
+              href={`/${params.locale}/join`}
+              className="eyebrow link-underline text-luxe-ink/70 transition-colors hover:text-luxe-accent"
+            >
+              {dict.home.countriesMore}
+            </Link>
+          }
+        />
+        <Reveal stagger className="grid gap-6 sm:grid-cols-3">
+          {countryDocs.map((doc) => (
+            <RevealItem key={doc.slug} className="h-full">
+              <Link
+                href={`/${params.locale}/join/${doc.slug}`}
+                className="luxe-card group flex h-full items-center gap-4 p-6"
+              >
+                <span className="text-3xl transition-transform duration-500 group-hover:scale-125">
+                  {doc.flag as string}
+                </span>
+                <span className="font-serif text-lg font-semibold text-luxe-ink">
+                  Atomy {doc.name as string}
+                </span>
+                <span aria-hidden="true" className="ml-auto text-luxe-accent opacity-0 transition-all duration-500 group-hover:translate-x-1 group-hover:opacity-100">
+                  →
+                </span>
+              </Link>
+            </RevealItem>
+          ))}
+        </Reveal>
       </section>
     </div>
   )

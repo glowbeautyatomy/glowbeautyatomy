@@ -13,9 +13,16 @@ export function CtaButton({ country, label }: CtaButtonProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-block rounded-full bg-atomy-dark px-8 py-3 font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-atomy"
+      className="group relative inline-flex items-center gap-3 overflow-hidden bg-luxe-ink px-9 py-4 text-xs font-semibold uppercase tracking-luxe text-white transition-colors duration-300 hover:bg-luxe-accent"
     >
-      {label}
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 -translate-x-full bg-white/15 transition-transform duration-700 group-hover:translate-x-full"
+      />
+      <span className="relative">{label}</span>
+      <span aria-hidden="true" className="relative transition-transform duration-300 group-hover:translate-x-1">
+        →
+      </span>
     </Link>
   )
 }

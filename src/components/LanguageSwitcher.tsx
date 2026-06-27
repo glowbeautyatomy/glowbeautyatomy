@@ -8,14 +8,18 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
   const pathname = usePathname()
 
   return (
-    <div className="flex gap-1 text-sm font-bold">
+    <div className="flex items-center gap-2 text-xs font-medium tracking-luxe">
       {locales.map((locale) => {
         const targetPath = pathname.replace(`/${currentLocale}`, `/${locale}`) || `/${locale}`
         return (
           <Link
             key={locale}
             href={targetPath}
-            className={locale === currentLocale ? 'text-atomy-dark underline' : 'text-gray-400'}
+            className={
+              locale === currentLocale
+                ? 'text-luxe-accent'
+                : 'text-luxe-ink/40 transition-colors hover:text-luxe-ink'
+            }
           >
             {locale.toUpperCase()}
           </Link>

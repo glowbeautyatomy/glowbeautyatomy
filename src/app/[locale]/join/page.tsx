@@ -15,17 +15,29 @@ export default async function JoinIndexPage({ params }: { params: { locale: Loca
   )
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-extrabold">{dict.nav.join}</h1>
-      <div className="grid gap-4 sm:grid-cols-3">
+    <div className="space-y-10">
+      <header className="border-b border-luxe-line pb-6">
+        <span className="eyebrow mb-3 block">Global Join</span>
+        <h1 className="font-serif text-4xl font-semibold tracking-tight text-luxe-ink">
+          {dict.nav.join}
+        </h1>
+      </header>
+      <div className="grid gap-6 sm:grid-cols-3">
         {docs.map((doc) => (
           <Link
             key={doc.slug}
             href={`/${params.locale}/join/${doc.slug}`}
-            className="flex items-center gap-3 rounded-xl bg-white p-5 shadow transition-transform hover:scale-[1.02]"
+            className="luxe-card group flex items-center gap-4 p-6"
           >
-            <span className="text-3xl">{doc.flag as string}</span>
-            <span className="font-bold">Atomy {doc.name as string}</span>
+            <span className="text-3xl transition-transform duration-500 group-hover:scale-125">
+              {doc.flag as string}
+            </span>
+            <span className="font-serif text-lg font-semibold text-luxe-ink">
+              Atomy {doc.name as string}
+            </span>
+            <span aria-hidden="true" className="ml-auto text-luxe-accent opacity-0 transition-all duration-500 group-hover:translate-x-1 group-hover:opacity-100">
+              →
+            </span>
           </Link>
         ))}
       </div>

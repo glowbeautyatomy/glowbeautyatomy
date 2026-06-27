@@ -15,21 +15,31 @@ export default async function ReviewsPage({ params }: { params: { locale: Locale
   )
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-extrabold">{dict.nav.reviews}</h1>
-      {docs.map((doc) => (
-        <Link
-          key={doc.slug}
-          href={`/${params.locale}/reviews/${doc.slug}`}
-          className="flex items-start gap-4 rounded-xl bg-white p-5 shadow transition-transform hover:scale-[1.01]"
-        >
-          <span className="text-3xl">{doc.emoji as string}</span>
-          <div>
-            <h2 className="font-bold">{doc.title}</h2>
-            <p className="text-sm text-gray-600">{doc.description}</p>
-          </div>
-        </Link>
-      ))}
+    <div className="space-y-10">
+      <header className="border-b border-luxe-line pb-6">
+        <span className="eyebrow mb-3 block">K-Beauty Picks</span>
+        <h1 className="font-serif text-4xl font-semibold tracking-tight text-luxe-ink">
+          {dict.nav.reviews}
+        </h1>
+      </header>
+      <div className="grid gap-6 sm:grid-cols-2">
+        {docs.map((doc) => (
+          <Link
+            key={doc.slug}
+            href={`/${params.locale}/reviews/${doc.slug}`}
+            className="luxe-card group relative flex items-start gap-4 overflow-hidden p-7"
+          >
+            <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-luxe-accent transition-transform duration-500 group-hover:scale-x-100" />
+            <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-luxe-cream text-2xl ring-1 ring-luxe-line transition-transform duration-500 group-hover:scale-110">
+              {doc.emoji as string}
+            </span>
+            <div>
+              <h2 className="font-serif text-lg font-semibold text-luxe-ink">{doc.title}</h2>
+              <p className="mt-1 text-sm leading-relaxed text-luxe-muted">{doc.description}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }
